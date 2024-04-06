@@ -1,0 +1,138 @@
+---
+import "@fontsource-variable/sofia-sans";
+import { Image } from "astro:assets";
+import ArrowDownIcon from "@astropub/icons/ArrowDown";
+import { Icon } from "astro-icon/components";
+---
+
+<html>
+  <body>
+    <header>
+      <Icon name="logo" class="logo" />
+      <Icon name="question" class="question" />
+    </header>
+    <section class="hero-header">
+      <h1 class="name">Naveen Kumar M S</h1>
+      <hr />
+    </section>
+    <section class="hero-container">
+      <div>
+        <p class="description">
+          I'm a Passionate front-end developer with expertise in HTML, CSS, and
+          JavaScript. Experienced in crafting responsive web applications using
+          modern frameworks like <b>React.js</b>.<br /> Dedicated to usability and
+          accessibility, ensuring seamless user experiences for all. Collaborative
+          team player with strong communication skills. <br />Enthusiastic about
+          staying updated with the latest trends and technologies in front-end
+          development.
+        </p>
+        <a>naveensomanna26@gmail.com</a>
+        <h4 class="work"><ArrowDownIcon class="arrow" />WORK</h4>
+      </div>
+      <Image
+        src="/profile.jpg"
+        width="300"
+        height="400"
+        decoding="async"
+        loading="lazy"
+        alt="A description of my profile."
+        class="profile"
+      />
+    </section>
+  </body>
+</html>
+<style>
+  body {
+    font-family: "Sofia Sans Variable", sans-serif;
+    padding: 0 1.5rem;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    .logo {
+      width: 64px;
+      height: 64px;
+    }
+    .question {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+  }
+
+  .hero-header {
+    padding: 1.25rem 0;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+  }
+
+  .name {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    padding: 1.25rem 0;
+    min-height: 60vh;
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: 1050px;
+      object-fit: cover;
+    }
+  }
+
+  .description {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 100;
+    margin: 0;
+    max-width: 100%;
+    text-align: left;
+  }
+  .profile {
+    border-radius: 8px;
+    max-width: 18rem;
+  }
+
+  a {
+    text-decoration: underline;
+    display: inline-block;
+    margin: 2rem 0;
+  }
+
+  .work {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    gap: 0.5rem;
+    cursor: pointer;
+    max-width: 100px;
+  }
+
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .work:hover .arrow {
+    transform: translateY(20%);
+  }
+
+  @media only screen and (min-width: 992px) {
+    body {
+      padding: 0 16%;
+    }
+    .hero-container {
+      flex-direction: row;
+      img {
+        max-width: 18rem;
+        height: 400px;
+      }
+    }
+  }
+</style>
