@@ -2,14 +2,27 @@
 import "@fontsource-variable/sofia-sans";
 import { Image } from "astro:assets";
 import ArrowDownIcon from "@astropub/icons/ArrowDown";
-import { Icon } from "astro-icon/components";
 ---
 
 <html>
   <body>
     <header>
-      <Icon name="logo" class="logo" />
-      <Icon name="question" class="question" />
+      <Image
+        src="/logo.png"
+        width="64"
+        height="64"
+        class="logo"
+        alt="main logo"
+        loading="lazy"
+      />
+      <Image
+        src="/question.png"
+        width="24"
+        height="24"
+        class="question"
+        alt="information "
+        loading="lazy"
+      />
     </header>
     <section class="hero-header">
       <h1 class="name">Naveen Kumar M S</h1>
@@ -54,11 +67,13 @@ import { Icon } from "astro-icon/components";
     .logo {
       width: 64px;
       height: 64px;
+      object-fit: contain;
     }
     .question {
       width: 24px;
       height: 24px;
       cursor: pointer;
+      object-fit: contain;
     }
   }
 
